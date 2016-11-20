@@ -1,0 +1,39 @@
+{
+  "name": "Sembia",
+  "description": "Sembia.studio Wordpress theme.",
+  "keywords": [
+    "css",
+    "js",
+    "less",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web",
+    "Wordpress",
+    "theme"
+  ],
+  "version": "0.1.0",
+  "homepage": "https://sembia.studio",
+  "authors": [
+    "Tyer Rilling <tyler@sembia.studio>",
+    "Marie VerMurlen <marie@sembia.studio>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1 - 2",
+    "bootstrap-sass": "~3.3.7",
+    "components-font-awesome": "*",
+    "jquery.easing": "*",
+    "bootstrap-datepicker": "*",
+    "isotope": "^3.0.1",
+    "owl.carousel": "^2.2.0"
+  }
+}
