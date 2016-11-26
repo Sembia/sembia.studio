@@ -11,7 +11,7 @@
     .entry-content {
         color: #fff;
         letter-spacing: 2px;
-        p { line-height: 22px; }
+        line-height: 22px;
         blockquote {
             margin: 40px 0;
             position: relative;
@@ -19,6 +19,8 @@
             background: #000;
             padding: 30px;
             border: 1px solid;
+            line-height: 28px;
+            font-weight: 100;
         }
     }
 }
