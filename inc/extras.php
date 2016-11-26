@@ -14,6 +14,8 @@
  * @return array
  */
 function sembia_body_classes( $classes ) {
+    global $post;
+    
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -23,6 +25,12 @@ function sembia_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+
+    // Add color classes to body
+    if(is_single() || is_page()){
+        $type = get_post_meta($post->ID, 'color', true);
+        $classes[] = $type;
+    }
 
 	return $classes;
 }
