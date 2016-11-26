@@ -18,6 +18,8 @@ if(has_post_thumbnail($post->ID)){
     $background_url = !empty($image_arr[0]) ? $image_arr[0] : '';
 }
 
+$site_logo = get_option('site_logo');
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -33,6 +35,12 @@ if(has_post_thumbnail($post->ID)){
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
+            <?php if ($site_logo) { ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                    <img src="<?php echo $site_logo; ?>" />
+                </a>
+            <?php } ?>
+
 			<?php
 			if ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
