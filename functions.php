@@ -121,6 +121,7 @@ require get_template_directory() . '/inc/extras.php';
 
 // Page Meta
 require get_template_directory() . '/inc/page_meta.php';
+require get_template_directory() . '/inc/theme_settings.php';
 
 /**
  * Customizer additions.

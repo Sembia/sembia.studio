@@ -8,6 +8,15 @@
  *
  * @package Sembia
  */
+global $post;
+$background_class = "default-background";
+$background_url = '';
+if(has_post_thumbnail($post->ID)){
+    // Set the background to the featured image;
+    $background_class = "featured-background";
+    $image_arr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+    $background_url = !empty($image_arr[0]) ? $image_arr[0] : '';
+}
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -20,7 +29,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
+<div id="page" class="site <?php echo $background_class; ?>" <?php if(!empty($background_url)){ echo 'style="background-image:url(' . $background_url . ')"'; } ?>>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
