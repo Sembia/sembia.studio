@@ -31,7 +31,7 @@ $site_logo = get_option('site_logo');
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site <?php echo $background_class; ?>" <?php if(!empty($background_url)){ echo 'style="background-image:url(' . $background_url . ')"'; } ?>>
+<div id="page" class="site background-image <?php echo $background_class; ?>" <?php if(!empty($background_url)){ echo 'style="background-image:url(' . $background_url . ')"'; } ?>>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
