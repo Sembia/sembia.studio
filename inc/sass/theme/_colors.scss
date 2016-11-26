@@ -1,0 +1,34 @@
+@mixin color_switch($accent){
+    h1, h2, h3, h4, h5, h6 {
+        color: $accent;
+    }
+    .entry-content a {
+        color: $accent;
+        &:hover {
+            color: lighten($accent, 20%);
+        }
+    }
+    .entry-content blockquote {
+        border: 1px solid $accent;
+    }
+}
+
+.page-default {
+    @include color_switch(#fff);
+}
+
+.page-red {
+    @include color_switch($red);
+}
+
+.page-blue {
+    @include color_switch($blue);
+}
+
+.page-yellow {
+    @include color_switch($yellow);
+}
+
+.page-green {
+    @include color_switch($green);
+}
