@@ -59,11 +59,6 @@ function sembia_setup() {
 		'caption',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'sembia_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 }
 endif;
 add_action( 'after_setup_theme', 'sembia_setup' );
@@ -102,22 +97,14 @@ add_action( 'widgets_init', 'sembia_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sembia_scripts() {
-	wp_enqueue_style( 'sembia-style', get_stylesheet_uri() );
-
-	wp_enqueue_script( 'sembia-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'sembia-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+    wp_enqueue_style('sembia-style', get_template_directory_uri() . '/dist/css/site.min.css', array(), '5', 'screen');
+	wp_enqueue_script('sembia-site-js', get_template_directory_uri() . '/dist/js/site.js', array('jquery'), '5', true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'sembia_scripts' );
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
