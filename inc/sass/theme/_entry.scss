@@ -23,4 +23,29 @@
             font-weight: 100;
         }
     }
+
+    p {
+        font-weight: 300;
+        margin: 0 0 30px;
+    }
+
+    img {
+        border: 1px solid;
+        display: block;
+        &.alignleft {
+            float: left;
+            margin-right: 25px;
+        }
+        &.alignright {
+            float: right;
+            margin-left: 25px;
+        }
+        &.aligncenter {
+            margin: auto;
+        }
+        &.alignnone {
+            position: relative;
+            left: -90px;
+        }
+    }
 }

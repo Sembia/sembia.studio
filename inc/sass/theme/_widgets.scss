@@ -1,5 +1,11 @@
 .widget-area {
-    .widget { margin: 30px auto; }
+    .widget {
+        margin: 40px auto;
+        & > ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+    }
     .widget-title {
         text-transform: uppercase;
         font-size: 18px;
