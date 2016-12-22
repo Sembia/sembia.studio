@@ -1,7 +1,9 @@
 .site-header {
-    width: 50%;
-    float: left;
-    padding: 100px 40px 0 40px;
+    padding: 100px 40px 20px 40px;
+
+    .site-branding {
+        img { max-width: 100%; }
+    }
 
     .main-navigation {
         margin: 20px 0 0;
@@ -23,5 +25,18 @@
                 a { border-left: 18px solid transparent; }
             }
         }
+    }
+}
+
+@media(max-width: 991px){
+    .site-header {
+        background-color: rgba(0, 0, 0, .75);
+    }
+}
+
+@media(min-width: 992px){
+    .site-header {
+        width: 50%;
+        float: left;
     }
 }

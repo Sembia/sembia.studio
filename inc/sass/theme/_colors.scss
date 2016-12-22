@@ -13,6 +13,8 @@
     }
 }
 
+.archive,
+.category,
 .page-default,
 .single-post {
     @include color_switch(#fff);

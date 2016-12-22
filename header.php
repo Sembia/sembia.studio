@@ -16,6 +16,11 @@ if(has_post_thumbnail($post->ID)){
     $background_class = "featured-background";
     $image_arr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
     $background_url = !empty($image_arr[0]) ? $image_arr[0] : '';
+} else {
+    if ( get_header_image() ) {
+        $background_class = "featured-background";
+        $background_url = header_image();
+    }
 }
 
 $site_logo = get_option('site_logo');
@@ -30,6 +35,8 @@ if(!empty($site_logo)){
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<?php echo get_option('extra_header_scripts'); ?>
+
 <script src="https://use.typekit.net/psp6tnb.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 

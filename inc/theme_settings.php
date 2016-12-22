@@ -15,6 +15,7 @@ function theme_options_menu() {
 function register_theme_options() {
     //register our settings
     register_setting( 'main-options', 'site_logo' );
+    register_setting( 'main-options', 'extra_header_scripts');
     register_setting( 'main-options', 'social_facebook');
     register_setting( 'main-options', 'social_twitter');
     register_setting( 'main-options', 'social_google');
@@ -91,6 +92,13 @@ jQuery(document).ready(function($){
             <th scope="row">Instagram URL</th>
             <td>
                 <input id="social_instagram" name="social_instagram" class="regular-text code" type="url" value="<?php echo get_option('social_instagram'); ?>" />
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Extra Header Scripts</th>
+            <td>
+                <textarea id="extra_header_scripts" name="extra_header_scripts" class="widefat" rows="10"><?php echo get_option('extra_header_scripts'); ?></textarea>
+                <p class="description">Any extra header scripts for things like tracking and analytics.</p>
             </td>
         </tr>
     </table>

@@ -1,24 +1,31 @@
 .site-content {
     margin-left: auto;
     margin-right: 0;
-    width: 50%;
+
     padding: 40px;
     background-color: rgba(0, 0, 0, .75);
 }
 
-
-
-.search-form {
-    .search-field {
-        border: 1px solid #666;
-        margin-right: 10px;
-        color: #fff;
-        background-color: rgba(255, 255, 255, .1);
+.nav-links {
+    padding: 40px 0;
+    .nav-previous { text-align: left; }
+    .nav-next { text-align: right; }
+    .nav-previous,
+    .nav-next {
+        width: 50%;
+        float: left;
+        a {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 3px solid;
+            padding: 4px 0px;
+            &:hover {text-decoration: none; }
+        }
     }
-    .search-submit {
-        background-color: transparent;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+}
+
+@media(min-width: 992px){
+    .site-content {
+        width: 50%;
     }
 }
