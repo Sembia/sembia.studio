@@ -8,6 +8,16 @@
         }
     }
 
+    .entry-meta {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 100;
+
+        .posted-on {
+            .updated { display: none; }
+        }
+    }
+
     .entry-content {
         color: #fff;
         letter-spacing: 2px;
@@ -46,6 +56,15 @@
         &.alignnone {
             position: relative;
             left: -90px;
+        }
+    }
+}
+
+.single-post {
+    .entry-header {
+        .entry-title {
+            font-size: 42px;
+            line-height: 64px;
         }
     }
 }
