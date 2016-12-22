@@ -11,16 +11,16 @@
 global $post;
 $background_class = "default-background";
 $background_url = '';
+
 if(has_post_thumbnail($post->ID)){
     // Set the background to the featured image;
     $background_class = "featured-background";
     $image_arr = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
     $background_url = !empty($image_arr[0]) ? $image_arr[0] : '';
-} else {
-    if ( get_header_image() ) {
-        $background_class = "featured-background";
-        $background_url = header_image();
-    }
+} elseif ( get_header_image() ) {
+    $background_class = "featured-background";
+    $background_url = !empty(get_header_image()) ? get_header_image() : '';
+    //$background_url = header_image();
 }
 
 $site_logo = get_option('site_logo');
