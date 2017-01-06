@@ -106,6 +106,19 @@ function sembia_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sembia_scripts' );
 
+// Add support for woocommerce
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+//Add .form-control to woo fields
+add_filter('woocommerce_form_field_args',  'wc_form_field_args',10,3);
+  function wc_form_field_args($args, $key, $value) {
+  $args['input_class'] = array( 'form-control' );
+  return $args;
+}
+
 // Utility functions
 require get_template_directory() . '/inc/utils.php';
 
@@ -133,3 +146,20 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Force Visual Composer to initialize as "built into the theme".
+ * This will hide certain tabs under the Settings->Visual Composer page
+ */
+add_action( 'vc_before_init', 'livingfuture_vcSetAsTheme' );
+function livingfuture_vcSetAsTheme() {
+    vc_set_as_theme();
+}
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'js_composer/js_composer.php' ) ) {
+    // Load Visual composer components
+    require_once get_template_directory() . '/inc/vc/vc_remove.php';
+    require_once get_template_directory() . '/inc/vc/vc_custom_param_types.php';
+    require_once get_template_directory() . '/inc/vc/vc_components.php';
+}

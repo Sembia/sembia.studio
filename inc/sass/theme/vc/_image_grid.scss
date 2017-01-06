@@ -1,0 +1,108 @@
+.sembia-image-grid {
+    margin: 0px auto;
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+    .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+    .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+    .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .row {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+
+    .image-full {display: none;}
+
+    .image-primary,
+    .image-half {
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 8px;
+        position: relative;
+    }
+    .image-primary {
+        height: 408px;
+        width: 100%;
+    }
+    .image-half {
+        height: 200px;
+        width: 100%;
+    }
+    .sembia-image-caption {
+        padding: 15px;
+        position: absolute;
+        color: #fff;
+        font-size: 10px;
+        background-color: $red;
+        font-style: italic;
+        letter-spacing: .75px;
+    }
+}
+.sembia-image-grid-1,
+.sembia-image-grid-3,
+.sembia-image-grid-4 {
+    .sembia-image-caption {
+        bottom: 10px;
+        left: -10px;
+        margin-right: 30px;
+    }
+}
+.sembia-image-grid-2 {
+    .sembia-image-caption {
+        bottom: 10px;
+        right: -10px;
+        margin-left: 30px;
+    }
+}
+
+.sembia-image-grid-5 {
+    img { max-width: 100%; }
+}
+
+// Fixes for margin spacing
+.sembia-image-grid ~ .sembia-image-grid { margin-top: 8px; }
+.sembia-image-grid ~ .wpb_content_element { margin-top: 30px; }
+
+
+@media(min-width: 992px){
+    .sembia-image-grid-5 {
+        margin-bottom: 30px;
+        &.text-right-float {
+            float: right;
+            padding-left: 30px;
+        }
+        &.text-left-float {
+            float: left;
+            padding-right: 30px;
+        }
+    }
+}
+
+@media(max-width: 991px){
+    .sembia-image-grid {
+        .image-primary {
+            background: none !important;
+            height: auto;
+        }
+        .image-full {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .sembia-image-caption {
+            position: relative;
+            top: 0 !important; bottom: 0;
+            right: 0; left: 0;
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .sembia-image-wwd {
+        height: auto !important;
+        .image-primary { height: auto !important; }
+    }
+}
