@@ -8234,7 +8234,8 @@ button.close {
     font-size: 10px;
     background-color: #F65314;
     font-style: italic;
-    letter-spacing: .75px; }
+    letter-spacing: .75px;
+    text-transform: uppercase; }
 
 .sembia-image-grid-1 .sembia-image-caption,
 .sembia-image-grid-3 .sembia-image-caption,
@@ -8344,6 +8345,14 @@ button.close {
   margin-right: 0;
   padding: 40px;
   background-color: rgba(0, 0, 0, 0.75); }
+
+a {
+  transition: 0.5s ease all; }
+  a:hover {
+    text-decoration: none; }
+  a.btn {
+    text-transform: uppercase;
+    letter-spacing: 2px; }
 
 .nav-links {
   padding: 40px 0; }
@@ -8562,7 +8571,8 @@ button.close {
 .category .entry-content a,
 .page-default .entry-content a,
 .single-post .entry-content a {
-  color: #fff; }
+  color: #fff;
+  transition: 0.5s ease all; }
   .archive .entry-content a:hover,
   .category .entry-content a:hover,
   .page-default .entry-content a:hover,
@@ -8575,49 +8585,109 @@ button.close {
 .single-post .entry-content blockquote {
   border: 1px solid #fff; }
 
+.archive a.btn-primary,
+.category a.btn-primary,
+.page-default a.btn-primary,
+.single-post a.btn-primary {
+  color: #fff;
+  border-color: #fff;
+  background-color: #fff;
+  transition: 0.5s ease all; }
+  .archive a.btn-primary:hover,
+  .category a.btn-primary:hover,
+  .page-default a.btn-primary:hover,
+  .single-post a.btn-primary:hover {
+    color: #fff;
+    background-color: #fff;
+    border-color: #fff; }
+
 .page-red h1, .page-red h2, .page-red h3, .page-red h4, .page-red h5, .page-red h6 {
   color: #F65314; }
 
 .page-red .entry-content a {
-  color: #F65314; }
+  color: #F65314;
+  transition: 0.5s ease all; }
   .page-red .entry-content a:hover {
     color: #fa9b76; }
 
 .page-red .entry-content blockquote {
   border: 1px solid #F65314; }
 
+.page-red a.btn-primary {
+  color: #fff;
+  border-color: #F65314;
+  background-color: #F65314;
+  transition: 0.5s ease all; }
+  .page-red a.btn-primary:hover {
+    color: #F65314;
+    background-color: #fff;
+    border-color: #fff; }
+
 .page-blue h1, .page-blue h2, .page-blue h3, .page-blue h4, .page-blue h5, .page-blue h6 {
   color: #00A1F1; }
 
 .page-blue .entry-content a {
-  color: #00A1F1; }
+  color: #00A1F1;
+  transition: 0.5s ease all; }
   .page-blue .entry-content a:hover {
     color: #58c8ff; }
 
 .page-blue .entry-content blockquote {
   border: 1px solid #00A1F1; }
 
+.page-blue a.btn-primary {
+  color: #fff;
+  border-color: #00A1F1;
+  background-color: #00A1F1;
+  transition: 0.5s ease all; }
+  .page-blue a.btn-primary:hover {
+    color: #00A1F1;
+    background-color: #fff;
+    border-color: #fff; }
+
 .page-yellow h1, .page-yellow h2, .page-yellow h3, .page-yellow h4, .page-yellow h5, .page-yellow h6 {
   color: #FFBB00; }
 
 .page-yellow .entry-content a {
-  color: #FFBB00; }
+  color: #FFBB00;
+  transition: 0.5s ease all; }
   .page-yellow .entry-content a:hover {
     color: #ffd666; }
 
 .page-yellow .entry-content blockquote {
   border: 1px solid #FFBB00; }
 
+.page-yellow a.btn-primary {
+  color: #fff;
+  border-color: #FFBB00;
+  background-color: #FFBB00;
+  transition: 0.5s ease all; }
+  .page-yellow a.btn-primary:hover {
+    color: #FFBB00;
+    background-color: #fff;
+    border-color: #fff; }
+
 .page-green h1, .page-green h2, .page-green h3, .page-green h4, .page-green h5, .page-green h6 {
   color: #7CBB00; }
 
 .page-green .entry-content a {
-  color: #7CBB00; }
+  color: #7CBB00;
+  transition: 0.5s ease all; }
   .page-green .entry-content a:hover {
     color: #b5ff22; }
 
 .page-green .entry-content blockquote {
   border: 1px solid #7CBB00; }
+
+.page-green a.btn-primary {
+  color: #fff;
+  border-color: #7CBB00;
+  background-color: #7CBB00;
+  transition: 0.5s ease all; }
+  .page-green a.btn-primary:hover {
+    color: #7CBB00;
+    background-color: #fff;
+    border-color: #fff; }
 
 .menu-item.page-red a:hover {
   color: #F65314; }

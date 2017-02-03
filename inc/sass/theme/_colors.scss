@@ -4,12 +4,25 @@
     }
     .entry-content a {
         color: $accent;
+        transition: 0.5s ease all;
         &:hover {
             color: lighten($accent, 20%);
         }
     }
     .entry-content blockquote {
         border: 1px solid $accent;
+    }
+
+    a.btn-primary {
+        color: #fff;
+        border-color: $accent;
+        background-color: $accent;
+        transition: 0.5s ease all;
+        &:hover {
+            color: $accent;
+            background-color: #fff;
+            border-color: #fff;
+        }
     }
 }
 

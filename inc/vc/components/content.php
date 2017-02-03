@@ -144,3 +144,55 @@ class WPBakeryShortCode_sembia_callout_title extends WPBakeryShortCode {
         return $output;
     }
 }
+
+// Button
+vc_map(
+    array(
+        "name" => "Button",
+        "description" => "Link button",
+        "base" => "sembia_button",
+        "category" => "Content",
+        "params" => array(
+            array(
+                "admin_label" => true,
+                "type" => "textfield",
+                "heading" => __("Text"),
+                "param_name" => "text",
+                "value" => '',
+            ),
+            array(
+                "admin_label" => true,
+                "type" => "upload_file",
+                "heading" => __("Link"),
+                "param_name" => "link",
+                "value" => '',
+            ),
+            array(
+                "admin_label" => true,
+                "type" => "checkbox",
+                "heading" => "Open link in new window?",
+                "param_name" => "target",
+                "description" => "Opens link in new window if checked.",
+                "value" => array(
+                    "Active" => 1
+                )
+            ),
+        )
+    )
+);
+class WPBakeryShortCode_sembia_button extends WPBakeryShortCode {
+    protected function content($atts, $content = null) {
+        extract(shortcode_atts(
+            array(
+                'link' => '', // Post IDs or URL to a full-sized image
+                'text' => '',
+                'target' => '',
+            ), $atts
+        ));
+        $output = false;
+        ob_start();
+        include(locate_template('inc/shortcodes/button.php'));
+        $output = ob_get_clean();
+        return $output;
+    }
+}
