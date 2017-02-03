@@ -13,6 +13,18 @@
     }
 }
 
+@mixin link_switch($accent){
+    a:hover {
+        color: $accent;
+    }
+
+    &.current_page_item {
+        a {
+            border-left: 10px solid $accent !important;
+        }
+    }
+}
+
 .archive,
 .category,
 .page-default,
@@ -34,4 +46,20 @@
 
 .page-green {
     @include color_switch($green);
+}
+
+.menu-item {
+    &.page-red {
+        @include link_switch($red);
+    }
+    &.page-blue {
+        @include link_switch($blue);
+    }
+    &.page-yellow {
+        @include link_switch($yellow);
+    }
+    &.page-green {
+        @include link_switch($green);
+    }
+
 }

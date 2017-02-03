@@ -15,7 +15,7 @@
  */
 function sembia_body_classes( $classes ) {
     global $post;
-    
+
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -45,3 +45,13 @@ function sembia_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'sembia_pingback_header' );
+
+// Add in custom classes to nav menu based on page color
+function add_color_nav_class($classes, $item){
+    if( 'page' == $item->object ){
+        $colorcode = get_post_meta($item->object_id, 'color', true);
+        $classes[] = $colorcode;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class' , 'add_color_nav_class' , 10 , 2);
