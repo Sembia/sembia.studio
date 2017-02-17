@@ -35,7 +35,9 @@ if(empty($section_color)) { $section_color = 'page-default'; }
 
     <div class="section" data-title="<?php echo get_the_title(); ?>">
         <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
-            <?php the_content(); ?>
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
         </div>
     </div><!-- .entry-content -->
 
@@ -48,7 +50,9 @@ if(empty($section_color)) { $section_color = 'page-default'; }
     ?>
     <div class="section" data-title="<?php echo get_the_title(); ?>">
         <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
-            <?php the_content(); ?>
+            <div class="entry-content">
+                <?php the_content(); ?>
+            </div>
         </div>
     </div>
     <?php endwhile; endif; wp_reset_postdata();?>
