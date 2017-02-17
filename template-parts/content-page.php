@@ -25,19 +25,31 @@ $sections = new WP_Query(array(
         )
     )
 ));
+$container_size = get_post_meta($post->ID, 'fullwidth', true);
+if(empty($container_size)) { $container_size = 'container'; }
+$section_color = get_post_meta($post->ID, 'color', true);
+if(empty($section_color)) { $section_color = 'page-default'; }
 ?>
 
 <div id="fullpage" <?php post_class(); ?>>
 
     <div class="section" data-title="<?php echo get_the_title(); ?>">
-        <?php the_content(); ?>
+        <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
+            <?php the_content(); ?>
+        </div>
     </div><!-- .entry-content -->
 
     <?php if ( $sections->have_posts() ) : while ( $sections->have_posts() ) : $sections->the_post();
     // Do whatever you want to do for every page. the_title(), the_permalink(), etc...
+        $container_size = get_post_meta($post->ID, 'fullwidth', true);
+        if(empty($container_size)) { $container_size = 'container'; }
+        $section_color = get_post_meta($post->ID, 'color', true);
+        if(empty($section_color)) { $section_color = 'page-default'; }
     ?>
     <div class="section" data-title="<?php echo get_the_title(); ?>">
-        <?php the_content(); ?>
+        <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
+            <?php the_content(); ?>
+        </div>
     </div>
     <?php endwhile; endif; wp_reset_postdata();?>
 

@@ -22,6 +22,13 @@ function render_page_type_box($object, $box){
     );
     $curr_color = get_post_meta($object->ID, 'color', true);
     if(empty($curr_color)) { $curr_color = 'page-default'; }
+
+    $fullwidth_options = array(
+        'container' => 'No',
+        'container-fluid' => 'Yes',
+    );
+    $curr_fullwidth = get_post_meta($object->ID, 'fullwidth', true);
+    if(empty($curr_fullwidth)) { $curr_fullwidth = 'container'; }
     $curr_parent = get_post_meta($object->ID, 'fullpage-parent', true);
     $curr_order = get_post_meta($object->ID, 'fullpage-order', true);
     if(empty($curr_order)) { $curr_order = 0; }
@@ -55,6 +62,15 @@ function render_page_type_box($object, $box){
         <br />
         <input type="number" size="4" name="fullpage-order" value="<?php echo $curr_order; ?>" />
     </p>
+    <p>
+        <strong>Fullwidth Section?</strong>
+        <br/>
+        <select name="fullwidth">
+            <?php foreach($fullwidth_options as $key => $val){ ?>
+                <option value="<?php echo $key; ?>" <?php if($key == $curr_fullwidth){ echo "selected"; }?>><?php echo $val; ?></option>
+            <?php } ?>
+        </select>
+    </p>
 <?php
 }
 /* Save the meta box's post metadata. */
@@ -75,4 +91,7 @@ function save_page_meta( $post_id, $post ) {
 
     $section_order = get_post_val('fullpage-order', 0);
     update_post_meta($post_id, 'fullpage-order', $section_order);
+
+    $fullwidth = get_post_val('fullwidth');
+    update_post_meta($post_id, 'fullwidth', $fullwidth);
 }
