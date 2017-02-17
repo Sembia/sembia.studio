@@ -1,0 +1,21 @@
+// Colors
+$red: #F65314;
+$blue: #00A1F1;
+$green: #7CBB00;
+$yellow: #FFBB00;
+
+@import "bootstrap/bootstrap";
+@import "font-awesome/font-awesome";
+@import "fullpage/fullpage";
+
+@import "theme/vc/callout_title";
+@import "theme/vc/image_grid";
+
+// Import Theme CSS
+@import "theme/layout";
+@import "theme/header";
+@import "theme/content";
+@import "theme/entry";
+@import "theme/comments";
+@import "theme/footer";
+@import "theme/colors";
