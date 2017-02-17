@@ -117,6 +117,11 @@ function sembia_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sembia_scripts' );
 
+// Custom files
+require get_template_directory() . '/inc/utils.php';
+require get_template_directory() . '/inc/page-extras.php';
+require get_template_directory() . '/inc/theme-settings.php';
+
 /**
  * Implement the Custom Header feature.
  */
