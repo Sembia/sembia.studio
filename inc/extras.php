@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates.
+ * Custom functions that act independently of the theme templates
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
@@ -14,8 +14,6 @@
  * @return array
  */
 function sembia_body_classes( $classes ) {
-    global $post;
-
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,12 +24,6 @@ function sembia_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-    // Add color classes to body
-    if(is_single() || is_page()){
-        $type = get_post_meta($post->ID, 'color', true);
-        $classes[] = $type;
-    }
-
 	return $classes;
 }
 add_filter( 'body_class', 'sembia_body_classes' );
@@ -41,17 +33,7 @@ add_filter( 'body_class', 'sembia_body_classes' );
  */
 function sembia_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
+		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
 	}
 }
 add_action( 'wp_head', 'sembia_pingback_header' );
-
-// Add in custom classes to nav menu based on page color
-function add_color_nav_class($classes, $item){
-    if( 'page' == $item->object ){
-        $colorcode = get_post_meta($item->object_id, 'color', true);
-        $classes[] = $colorcode;
-    }
-    return $classes;
-}
-add_filter('nav_menu_css_class' , 'add_color_nav_class' , 10 , 2);
