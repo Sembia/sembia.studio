@@ -1,6 +1,6 @@
 /*!
  * UnderTasker
- * Copyright 2016 Tyler Rilling
+ * Copyright 2017 Tyler Rilling
  * Licensed under MIT (https://github.com/underlost/Undertasker/blob/master/LICENSE)
  */
 
