@@ -113,6 +113,20 @@ add_action( 'widgets_init', 'sembia_widgets_init' );
 }
 add_action( 'wp_enqueue_scripts', 'sembia_scripts' );
 
+// Add support for woocommerce
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+//Add .form-control to woo fields
+add_filter('woocommerce_form_field_args',  'wc_form_field_args',10,3);
+  function wc_form_field_args($args, $key, $value) {
+  $args['input_class'] = array( 'form-control' );
+  return $args;
+}
+
+
+
 // Custom files
 require get_template_directory() . '/inc/utils.php';
 require get_template_directory() . '/inc/page-extras.php';
@@ -142,3 +156,46 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Force Visual Composer to initialize as "built into the theme".
+ * This will hide certain tabs under the Settings->Visual Composer page
+ */
+add_action( 'vc_before_init', 'livingfuture_vcSetAsTheme' );
+function livingfuture_vcSetAsTheme() {
+    vc_set_as_theme();
+}
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'js_composer/js_composer.php' ) ) {
+    // Load Visual composer components
+    require_once get_template_directory() . '/inc/vc/vc_remove.php';
+    require_once get_template_directory() . '/inc/vc/vc_custom_param_types.php';
+    require_once get_template_directory() . '/inc/vc/vc_components.php';
+
+    add_filter('vc_shortcodes_css_class', function ($class_string, $tag) {
+        $tags_to_clean = [
+            'vc_row',
+            'vc_column',
+            'vc_row_inner',
+            'vc_column_inner'
+        ];
+        if (in_array($tag, $tags_to_clean)) {
+
+            $class_string = str_replace(' wpb_row', '', $class_string);
+            $class_string = str_replace(' vc_row-fluid', '', $class_string);
+            $class_string = str_replace(' vc_column_container', '', $class_string);
+            $class_string = str_replace('wpb_column', '', $class_string);
+
+            // replace vc_, but exclude any custom css
+            // attached via vc_custom_XXX (negative lookahead)
+            $class_string = preg_replace('/vc_(?!custom)/i', '', $class_string);
+
+            // replace all vc_
+            // $class_string = preg_replace('/vc_/i', '', $class_string);
+        }
+        $class_string = preg_replace('|col-sm|', 'col-sm', $class_string);
+        return $class_string;
+    }, 10, 2);
+    
+}
