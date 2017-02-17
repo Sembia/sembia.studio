@@ -106,15 +106,9 @@ gulp.task('concat-js', function() {
         // Bower components
         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
         'bower_components/jquery.easing/js/jquery.easing.js',
-        'bower_components/isotope/dist/isotope.pkgd.js',
-        'bower_components/owl.carousel/dist/owl.carousel.js',
         'bower_components/fullpage.js/dist/jquery.fullpage.js',
-        'inc/js/jquery.appear.js',
-        // 'inc/js/featherlight.js',
-        'inc/js/filter.js',
-        'inc/js/functions.js',
-        'inc/js/sidebar_links.js',
-        'inc/js/tracking.js',
+
+        'inc/js/site.js',
 
         // Coffeescript
         'inc/js/coffee/*.*',
