@@ -108,6 +108,7 @@ gulp.task('concat-js', function() {
         'bower_components/jquery.easing/js/jquery.easing.js',
         'bower_components/isotope/dist/isotope.pkgd.js',
         'bower_components/owl.carousel/dist/owl.carousel.js',
+        'bower_components/fullpage.js/dist/jquery.fullpage.js',
         'inc/js/jquery.appear.js',
         // 'inc/js/featherlight.js',
         'inc/js/filter.js',
