@@ -15,4 +15,3 @@ function pretty_print($obj){
     echo "</pre>";
 }
 ?>
-Contact GitHub API Training Shop Blog About
