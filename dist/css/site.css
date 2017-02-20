@@ -8361,6 +8361,20 @@ html.fp-enabled,
     .sembia-image-wwd .image-primary {
       height: auto !important; } }
 
+#header-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+  #header-nav .navbar-brand {
+    padding: 0; }
+    #header-nav .navbar-brand > img {
+      height: 50px;
+      padding: 15px; }
+
+.admin-bar #header-nav {
+  top: 32px; }
+
 #comments {
   margin: 60px 0;
   padding-bottom: 20px;
@@ -8572,26 +8586,38 @@ html.fp-enabled,
     background-color: #fff;
     border-color: #fff; }
 
-.menu-item.page-red a:hover {
-  color: #F65314; }
+.menu-item.page-red a {
+  transition: 0.5s ease all; }
+  .menu-item.page-red a:hover, .menu-item.page-red a:focus {
+    color: #F65314;
+    background-color: transparent; }
 
 .menu-item.page-red.current_page_item a {
   border-left: 10px solid #F65314 !important; }
 
-.menu-item.page-blue a:hover {
-  color: #00A1F1; }
+.menu-item.page-blue a {
+  transition: 0.5s ease all; }
+  .menu-item.page-blue a:hover, .menu-item.page-blue a:focus {
+    color: #00A1F1;
+    background-color: transparent; }
 
 .menu-item.page-blue.current_page_item a {
   border-left: 10px solid #00A1F1 !important; }
 
-.menu-item.page-yellow a:hover {
-  color: #FFBB00; }
+.menu-item.page-yellow a {
+  transition: 0.5s ease all; }
+  .menu-item.page-yellow a:hover, .menu-item.page-yellow a:focus {
+    color: #FFBB00;
+    background-color: transparent; }
 
 .menu-item.page-yellow.current_page_item a {
   border-left: 10px solid #FFBB00 !important; }
 
-.menu-item.page-green a:hover {
-  color: #7CBB00; }
+.menu-item.page-green a {
+  transition: 0.5s ease all; }
+  .menu-item.page-green a:hover, .menu-item.page-green a:focus {
+    color: #7CBB00;
+    background-color: transparent; }
 
 .menu-item.page-green.current_page_item a {
   border-left: 10px solid #7CBB00 !important; }

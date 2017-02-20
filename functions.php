@@ -125,7 +125,8 @@ add_filter('woocommerce_form_field_args',  'wc_form_field_args',10,3);
   return $args;
 }
 
-
+// Register Custom Navigation Walker
+require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';
 
 // Custom files
 require get_template_directory() . '/inc/utils.php';
@@ -197,5 +198,5 @@ if ( is_plugin_active( 'js_composer/js_composer.php' ) ) {
         $class_string = preg_replace('|col-sm|', 'col-sm', $class_string);
         return $class_string;
     }, 10, 2);
-    
+
 }

@@ -2,7 +2,7 @@
     h1, h2, h3, h4, h5, h6 {
         color: $accent;
     }
-    a {
+    .entry-content a {
         color: $accent;
         transition: 0.5s ease all;
         &:hover {
@@ -27,8 +27,12 @@
 }
 
 @mixin link_switch($accent){
-    a:hover {
-        color: $accent;
+    a {
+        transition: 0.5s ease all;
+        &:hover, &:focus {
+            color: $accent;
+            background-color: transparent;
+        }
     }
 
     &.current_page_item {

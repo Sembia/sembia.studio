@@ -1,0 +1,21 @@
+#header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    .navbar-brand {
+        padding: 0;
+
+        &>img {
+            height: 50px;
+            padding: 15px;
+        }
+    }
+
+}
+
+.admin-bar #header-nav{
+    top: 32px;
+
+}

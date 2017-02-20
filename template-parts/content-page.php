@@ -29,11 +29,12 @@ $container_size = get_post_meta($post->ID, 'fullwidth', true);
 if(empty($container_size)) { $container_size = 'container'; }
 $section_color = get_post_meta($post->ID, 'color', true);
 if(empty($section_color)) { $section_color = 'page-default'; }
+$background_image = get_the_post_thumbnail_url($post->ID, 'full');
 ?>
 
 <div id="fullpage" <?php post_class(); ?>>
 
-    <div class="section" data-title="<?php echo get_the_title(); ?>">
+    <div class="section" data-title="<?php echo get_the_title(); ?>" <?php if($background_image){ ?> style="background-image:url('<?php echo $background_image;?>')" <?php } ?> >
         <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
             <div class="entry-content">
                 <?php the_content(); ?>
@@ -47,8 +48,9 @@ if(empty($section_color)) { $section_color = 'page-default'; }
         if(empty($container_size)) { $container_size = 'container'; }
         $section_color = get_post_meta($post->ID, 'color', true);
         if(empty($section_color)) { $section_color = 'page-default'; }
+        $background_image = get_the_post_thumbnail_url($post->ID, 'full');
     ?>
-    <div class="section" data-title="<?php echo get_the_title(); ?>">
+    <div class="section" data-title="<?php echo get_the_title(); ?>" <?php if($background_image){ ?> style="background-image:url('<?php echo $background_image;?>')" <?php } ?> >
         <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
             <div class="entry-content">
                 <?php the_content(); ?>
