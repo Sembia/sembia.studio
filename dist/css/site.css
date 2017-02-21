@@ -1054,7 +1054,7 @@ body {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #555555;
+  color: #777777;
   background-color: #1a1a1a; }
 
 input,
@@ -2685,7 +2685,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #959595; }
+  color: #b7b7b7; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4302,7 +4302,7 @@ a.badge:hover, a.badge:focus {
     margin-right: auto; }
   .thumbnail .caption {
     padding: 9px;
-    color: #555555; }
+    color: #777777; }
 
 a.thumbnail:hover,
 a.thumbnail:focus,
@@ -8375,6 +8375,14 @@ html.fp-enabled,
 .admin-bar #header-nav {
   top: 32px; }
 
+a {
+  transition: 0.5s ease all; }
+  a:hover {
+    text-decoration: none; }
+  a.btn {
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+
 .dark-container {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px 15px; }
@@ -8473,7 +8481,8 @@ html.fp-enabled,
 .page-default .entry-content a,
 .single-post .entry-content a {
   color: #fff;
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .archive .entry-content a:hover,
   .category .entry-content a:hover,
   .page-default .entry-content a:hover,
@@ -8507,7 +8516,8 @@ html.fp-enabled,
 
 .page-red .entry-content a {
   color: #F65314;
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .page-red .entry-content a:hover {
     color: #fa9b76; }
 
@@ -8529,7 +8539,8 @@ html.fp-enabled,
 
 .page-blue .entry-content a {
   color: #00A1F1;
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .page-blue .entry-content a:hover {
     color: #58c8ff; }
 
@@ -8551,7 +8562,8 @@ html.fp-enabled,
 
 .page-yellow .entry-content a {
   color: #FFBB00;
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .page-yellow .entry-content a:hover {
     color: #ffd666; }
 
@@ -8573,7 +8585,8 @@ html.fp-enabled,
 
 .page-green .entry-content a {
   color: #7CBB00;
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .page-green .entry-content a:hover {
     color: #b5ff22; }
 
@@ -8591,7 +8604,8 @@ html.fp-enabled,
     border-color: #fff; }
 
 .menu-item.page-red a {
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .menu-item.page-red a:hover, .menu-item.page-red a:focus {
     color: #F65314;
     background-color: transparent; }
@@ -8600,7 +8614,8 @@ html.fp-enabled,
   border-left: 10px solid #F65314 !important; }
 
 .menu-item.page-blue a {
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .menu-item.page-blue a:hover, .menu-item.page-blue a:focus {
     color: #00A1F1;
     background-color: transparent; }
@@ -8609,7 +8624,8 @@ html.fp-enabled,
   border-left: 10px solid #00A1F1 !important; }
 
 .menu-item.page-yellow a {
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .menu-item.page-yellow a:hover, .menu-item.page-yellow a:focus {
     color: #FFBB00;
     background-color: transparent; }
@@ -8618,7 +8634,8 @@ html.fp-enabled,
   border-left: 10px solid #FFBB00 !important; }
 
 .menu-item.page-green a {
-  transition: 0.5s ease all; }
+  transition: 0.5s ease all;
+  cursor: pointer; }
   .menu-item.page-green a:hover, .menu-item.page-green a:focus {
     color: #7CBB00;
     background-color: transparent; }

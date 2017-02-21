@@ -8,6 +8,8 @@ vc_map(
         "category" => "Content",
         "show_settings_on_create" => false,
         "is_container" => true,
+        "content_element" => true,
+        "js_view" => 'VcColumnView',
     )
 );
 class WPBakeryShortCode_sembia_dark_container extends WPBakeryShortCodesContainer {
@@ -146,8 +148,8 @@ vc_map(array(
                 'Default (none)' => 'default',
                 'Red' => 'red',
                 'Blue' => 'blue',
-                'green' => 'green',
-                'yellow' => 'yellow',
+                'Green' => 'green',
+                'Yellow' => 'yellow',
             ),
         ),
     )

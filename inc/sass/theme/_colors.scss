@@ -5,6 +5,7 @@
     .entry-content a {
         color: $accent;
         transition: 0.5s ease all;
+        cursor: pointer;
         &:hover {
             color: lighten($accent, 20%);
         }
@@ -29,6 +30,7 @@
 @mixin link_switch($accent){
     a {
         transition: 0.5s ease all;
+        cursor: pointer;
         &:hover, &:focus {
             color: $accent;
             background-color: transparent;
