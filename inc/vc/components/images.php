@@ -224,7 +224,6 @@ vc_map(
         "name" => "Graphic",
         "description" => "Single image",
         "base" => "sembia_image_grid_5",
-        "as_child" => array('only' => 'sembia_content'),
         "category" => "Content",
         "params" => array(
             array(

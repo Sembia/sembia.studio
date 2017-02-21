@@ -8383,6 +8383,11 @@ a {
     text-transform: uppercase;
     letter-spacing: 2px; }
 
+.section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+
 .dark-container {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px 15px; }
