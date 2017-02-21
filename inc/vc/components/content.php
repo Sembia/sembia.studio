@@ -1,4 +1,28 @@
 <?php
+// p.Lead
+vc_map(
+    array(
+        "name" => "Dark Container",
+        "description" => "Container to wrap contents in darker area.",
+        "base" => "sembia_dark_container",
+        "category" => "Content",
+        "show_settings_on_create" => false,
+        "is_container" => true,
+    )
+);
+class WPBakeryShortCode_sembia_dark_container extends WPBakeryShortCodesContainer {
+    protected function content($atts, $content = null) {
+        extract(shortcode_atts(
+            array(
+            ), $atts
+        ));
+        $output = false;
+        ob_start();
+        include(locate_template('inc/shortcodes/dark_container.php'));
+        $output = ob_get_clean();
+        return $output;
+    }
+}
 
 // p.Lead
 vc_map(
