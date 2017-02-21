@@ -1054,7 +1054,7 @@ body {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #777777;
+  color: #eeeeee;
   background-color: #1a1a1a; }
 
 input,
@@ -2685,7 +2685,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #b7b7b7; }
+  color: white; }
 
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -4302,7 +4302,7 @@ a.badge:hover, a.badge:focus {
     margin-right: auto; }
   .thumbnail .caption {
     padding: 9px;
-    color: #777777; }
+    color: #eeeeee; }
 
 a.thumbnail:hover,
 a.thumbnail:focus,
