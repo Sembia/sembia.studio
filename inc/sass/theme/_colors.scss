@@ -1,30 +1,33 @@
 @mixin color_switch($accent){
-    h1, h2, h3, h4, h5, h6 {
-        color: $accent;
-    }
-    .entry-content a {
-        color: $accent;
-        transition: 0.5s ease all;
-        cursor: pointer;
-        &:hover {
-            color: lighten($accent, 20%);
-        }
-    }
-    .entry-content blockquote {
-        border: 1px solid $accent;
-    }
-
-    a.btn-primary {
-        color: #fff;
-        border-color: $accent;
-        background-color: $accent;
-        transition: 0.5s ease all;
-        &:hover {
+        h1, h2, h3, h4, h5, h6 {
             color: $accent;
-            background-color: #fff;
-            border-color: #fff;
         }
-    }
+        .entry-content a {
+            color: $accent;
+            transition: 0.5s ease all;
+            cursor: pointer;
+            &:hover {
+                color: lighten($accent, 20%);
+            }
+        }
+        .entry-content blockquote {
+            border: 1px solid $accent;
+        }
+
+        a.btn-primary {
+            color: #fff;
+            border-color: $accent;
+            background-color: $accent;
+            transition: 0.5s ease all;
+            &:hover {
+                color: $accent;
+                background-color: rgba(0,0,0,0.75);
+                border-color: $accent;
+            }
+        }
+        .sembia-image-caption {
+            background-color: $accent;
+        }
 }
 
 @mixin link_switch($accent){
@@ -38,9 +41,7 @@
     }
 
     &.current_page_item {
-        a {
-            border-left: 10px solid $accent !important;
-        }
+        a { border-bottom: 1px solid $accent !important; }
     }
 }
 

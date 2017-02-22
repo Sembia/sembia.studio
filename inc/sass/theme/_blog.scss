@@ -1,0 +1,31 @@
+.single-post {
+    .site-main {
+        margin: 0 auto 40px 0;
+        width: 50%;
+        background-color: rgba(0,0,0,0.5);
+        padding: 40px;
+    }
+
+    .post-wrapper {
+        position: relative;
+
+        .post-background-image {
+            content: ' ';
+            position: fixed;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    article.post {
+        .entry-header {}
+        .entry-content {}
+        .entry-fotter {}
+    }
+}

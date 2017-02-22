@@ -13,9 +13,10 @@ $yellow: #FFBB00;
 
 // Import Theme CSS
 @import "theme/layout";
+@import "theme/colors";
 @import "theme/header";
 @import "theme/content";
 @import "theme/entry";
+@import "theme/blog";
 @import "theme/comments";
 @import "theme/footer";
-@import "theme/colors";

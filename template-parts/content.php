@@ -7,7 +7,15 @@
  * @package Sembia
  */
 
+$background_image = get_the_post_thumbnail_url($post->ID, 'full');
+
 ?>
+
+<div class="post-wrapper">
+
+<?php if($background_image){ ?>
+    <div class="post-background-image" style="background-image:url('<?php echo $background_image;?>')"></div>
+<?php } ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -45,3 +53,5 @@
 		<?php sembia_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
+</div>

@@ -1,4 +1,4 @@
-#header-nav {
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,9 +13,13 @@
         }
     }
 
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: transparent;
+    }
+
 }
 
-.admin-bar #header-nav{
+.admin-bar .site-header{
     top: 32px;
-
 }

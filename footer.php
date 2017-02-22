@@ -15,9 +15,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'sembia' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'sembia' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'sembia' ), 'sembia', '<a href="https://automattic.com/" rel="designer">Sembia Studio</a>' ); ?>
+            Copyright &copy; <?php echo date("Y"); ?>. <?php printf( esc_html__( '%1$s by %2$s.', 'sembia' ), 'sembia', '<a href="https://sembia.studio/theme/" rel="designer">Sembia Studio</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

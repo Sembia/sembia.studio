@@ -29,7 +29,7 @@ $brand-danger:          $red !default;
 //** Background color for `<body>`.
 $body-bg:               #1a1a1a !default;
 //** Global text color on `<body>`.
-$text-color:            $gray-lighter !default;
+$text-color:            #f3f2f8 !default;
 
 //** Global textual link color.
 $link-color:            $brand-primary !default;
@@ -45,6 +45,7 @@ $link-hover-decoration: underline !default;
 
 $font-family-sans-serif:  "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-heading:     "ff-good-headline-web-pro-con", "proxima-nova", "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
@@ -66,8 +67,8 @@ $line-height-base:        1.428571429 !default; // 20/14
 $line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
 
 //** By default, this inherits from the `<body>`.
-$headings-font-family:    $font-family-serif !default;
-$headings-font-weight:    500 !default;
+$headings-font-family:    $font-family-heading !default;
+$headings-font-weight:    400 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
 

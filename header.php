@@ -9,12 +9,22 @@
  * @package Sembia
  */
 
+$site_logo = get_option('site_logo');
+$title_class = '';
+if(!empty($site_logo)){
+    $title_class = 'sr-only';
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<?php echo get_option('extra_header_scripts'); ?>
+
+<script src="https://use.typekit.net/psp6tnb.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <?php wp_head(); ?>
 </head>
@@ -22,13 +32,15 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<header id="header-nav" class="navbar navbar-fixed-top sembia-header">
+	<header id="header-nav" class="navbar navbar-fixed-top site-header sembia-header">
         <div class="container">
+            <?php if ($site_logo) { ?>
             <div class="navbar-header">
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) );?>">
-                    <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri() . '/dist/img/logo_small.png'; ?>">
+                    <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $site_logo; ?>">
                 </a>
             </div>
+            <?php } ?>
             <div class="navbar-right">
                 <?php
                 wp_nav_menu( array(
@@ -44,6 +56,7 @@
                 );
                 ?>
             </div>
+
         </div>
 	</header><!-- #masthead -->
 

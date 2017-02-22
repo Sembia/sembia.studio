@@ -1,26 +1,9 @@
 a {
     transition: 0.5s ease all;
-    &:hover {
-        text-decoration: none;
-    }
+    &:hover {text-decoration: none;}
 
     &.btn {
         text-transform: uppercase;
         letter-spacing: 2px;
     }
-}
-
-.section {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.button-wrapper {
-    margin-bottom: 10px;
-}
-
-.dark-container {
-    background-color: rgba(0,0,0,0.8);
-    padding: 30px 15px;
 }
