@@ -1,0 +1,13 @@
+
+.wpcf7-form {
+    label { width: 100%; }
+}
+
+.wpcf7-form-control {
+    @extend .form-control;
+}
+
+.wpcf7-submit {
+    @extend .btn;
+    @extend .btn-default;
+}
