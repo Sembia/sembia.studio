@@ -52,6 +52,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: -6px 0 0 -6px;
     border-radius: 100%;
     background: $text-color;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 #fp-nav ul li a span, .fp-slidesNav ul li a span {

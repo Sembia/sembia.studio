@@ -1,13 +1,26 @@
 
 .wpcf7-form {
-    label { width: 100%; }
+    label {
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
 }
 
 .wpcf7-form-control {
     @extend .form-control;
+    letter-spacing: 1.5px;
+    border-color: rgba(255, 255, 255, .5);
+    background-color: rgba(0, 0, 0, .5);
+    margin-top: 5px;
 }
 
 .wpcf7-submit {
     @extend .btn;
     @extend .btn-default;
+    border-width: 2px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    border-color: $text-color;
 }
