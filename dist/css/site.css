@@ -8576,12 +8576,6 @@ h1, h2, h3, h4, h5, h6 {
 .single-post .wpcf7-form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fff; }
 
-.archive .wpcf7-submit:hover,
-.category .wpcf7-submit:hover,
-.page-default .wpcf7-submit:hover,
-.single-post .wpcf7-submit:hover {
-  border-color: #fff; }
-
 .page-red h1, .page-red h2, .page-red h3, .page-red h4, .page-red h5, .page-red h6 {
   color: #F65314; }
 
@@ -8611,9 +8605,6 @@ h1, h2, h3, h4, h5, h6 {
 .page-red .form-control:focus, .page-red .wpcf7-form-control:focus,
 .page-red .wpcf7-form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #F65314; }
-
-.page-red .wpcf7-submit:hover {
-  border-color: #F65314; }
 
 .page-blue h1, .page-blue h2, .page-blue h3, .page-blue h4, .page-blue h5, .page-blue h6 {
   color: #00A1F1; }
@@ -8645,9 +8636,6 @@ h1, h2, h3, h4, h5, h6 {
 .page-blue .wpcf7-form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #00A1F1; }
 
-.page-blue .wpcf7-submit:hover {
-  border-color: #00A1F1; }
-
 .page-yellow h1, .page-yellow h2, .page-yellow h3, .page-yellow h4, .page-yellow h5, .page-yellow h6 {
   color: #FFBB00; }
 
@@ -8678,9 +8666,6 @@ h1, h2, h3, h4, h5, h6 {
 .page-yellow .wpcf7-form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FFBB00; }
 
-.page-yellow .wpcf7-submit:hover {
-  border-color: #FFBB00; }
-
 .page-green h1, .page-green h2, .page-green h3, .page-green h4, .page-green h5, .page-green h6 {
   color: #7CBB00; }
 
@@ -8710,9 +8695,6 @@ h1, h2, h3, h4, h5, h6 {
 .page-green .form-control:focus, .page-green .wpcf7-form-control:focus,
 .page-green .wpcf7-form-control:focus {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7CBB00; }
-
-.page-green .wpcf7-submit:hover {
-  border-color: #7CBB00; }
 
 .menu-item.page-red a {
   transition: 0.5s ease all;
