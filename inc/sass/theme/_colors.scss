@@ -1,33 +1,42 @@
 @mixin color_switch($accent){
-        h1, h2, h3, h4, h5, h6 {
-            color: $accent;
+    h1, h2, h3, h4, h5, h6 {
+        color: $accent;
+    }
+    .entry-content a {
+        color: $accent;
+        transition: 0.5s ease all;
+        cursor: pointer;
+        &:hover {
+            color: lighten($accent, 20%);
         }
-        .entry-content a {
-            color: $accent;
-            transition: 0.5s ease all;
-            cursor: pointer;
-            &:hover {
-                color: lighten($accent, 20%);
-            }
-        }
-        .entry-content blockquote {
-            border: 1px solid $accent;
-        }
+    }
+    .entry-content blockquote {
+        border: 1px solid $accent;
+    }
 
-        a.btn-primary {
-            color: #fff;
+    a.btn-primary {
+        color: #fff;
+        border-color: $accent;
+        background-color: $accent;
+        transition: 0.5s ease all;
+        &:hover {
+            color: $accent;
+            background-color: rgba(0,0,0,0.75);
             border-color: $accent;
-            background-color: $accent;
-            transition: 0.5s ease all;
-            &:hover {
-                color: $accent;
-                background-color: rgba(0,0,0,0.75);
-                border-color: $accent;
-            }
         }
-        .sembia-image-caption {
-            background-color: $accent;
-        }
+    }
+    .sembia-image-caption {
+        background-color: $accent;
+    }
+
+    .form-control:focus,
+    .wpcf7-form-control:focus {
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px $accent;
+    }
+
+    .wpcf7-submit:hover {
+        border-color: $accent;
+    }
 }
 
 @mixin link_switch($accent){
