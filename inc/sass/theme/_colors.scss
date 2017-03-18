@@ -7,7 +7,7 @@
         transition: 0.5s ease all;
         cursor: pointer;
         &:hover {
-            color: lighten($accent, 20%);
+            color: lighten($accent, 10%);
         }
     }
     .entry-content blockquote {
@@ -20,9 +20,9 @@
         background-color: $accent;
         transition: 0.5s ease all;
         &:hover {
-            color: $accent;
-            background-color: rgba(0,0,0,0.75);
-            border-color: $accent;
+            color: #fff;
+            background-color: darken($accent, 20%);
+            border-color: darken($accent, 20%);
         }
     }
     .sembia-image-caption {
