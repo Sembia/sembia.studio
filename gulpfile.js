@@ -20,7 +20,6 @@ var gulp   = require('gulp'),
     runSequence = require('run-sequence');
     coffee = require('gulp-coffee');
     gutil = require('gulp-util');
-    bower = require('gulp-bower');
     imagemin = require('gulp-imagemin');
     git = require('gulp-deploy-git');
     argv = require('minimist')(process.argv.slice(2));
@@ -36,10 +35,10 @@ gulp.task('copy-fonts', function() {
     gulp.src('inc/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
     .pipe(gulp.dest('dist/fonts'));
     // Copy Font scss
-    gulp.src('bower_components/components-font-awesome/scss/**/*.scss')
+    gulp.src('node_modules/components-font-awesome/scss/**/*.scss')
     .pipe(gulp.dest('inc/sass/font-awesome'));
     // Copy Font files
-    gulp.src('bower_components/components-font-awesome/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
+    gulp.src('node_modules/components-font-awesome/fonts/**/*.{ttf,woff,eof,svg,eot,woff2,otf}')
     .pipe(gulp.dest('dist/fonts'));
 });
 
@@ -50,29 +49,23 @@ gulp.task('imagemin', function() {
 	.pipe(gulp.dest('dist/img'))
 });
 
-// Copy Bower components
-gulp.task('copy-bower', function() {
+// Copy components
+gulp.task('copy-components', function() {
     gulp.src([
-        'bower_components/jquery/dist/jquery.min.js',
+        'node_modules/jquery/dist/jquery.min.js',
     ])
     .pipe(gulp.dest('dist/js/lib'));
 
-    gulp.src('bower_components/components-font-awesome/scss/**/*.*')
+    gulp.src('node_modules/components-font-awesome/scss/**/*.*')
     .pipe(gulp.dest('inc/sass/font-awesome'));
 
-    gulp.src('bower_components/bootstrap-sass/assets/stylesheets/**/*.*')
+    gulp.src('node_modules/bootstrap-sass/assets/stylesheets/**/*.*')
     .pipe(gulp.dest('inc/sass/bootstrap'));
 });
 
-// Runs Bower update
-gulp.task('bower-update', function() {
-    return bower({ cmd: 'update'});
-});
-
-// Bower tasks
-gulp.task('bower', function(callback) {
+gulp.task('install', function(callback) {
     runSequence(
-        'bower-update', 'copy-bower', callback
+        'copy-components', 'copy-fonts', callback
     );
 });
 
@@ -86,9 +79,7 @@ gulp.task('brew-coffee', function() {
 // CSS Build Task
 gulp.task('build-css', function() {
   return gulp.src('inc/sass/site.scss')
-    //.pipe(sourcemaps.init())  // Process the original sources
     .pipe(sass().on('error', sass.logError))
-    //.pipe(sourcemaps.write()) // Add the map to modified source.
     .pipe(autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
@@ -103,13 +94,10 @@ gulp.task('build-css', function() {
 // Concat All JS into unminified single file
 gulp.task('concat-js', function() {
     return gulp.src([
-        // Bower components
-        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-        'bower_components/jquery.easing/js/jquery.easing.js',
-        'bower_components/fullpage.js/dist/jquery.fullpage.js',
-
+        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+        'node_modules/jquery.easing/js/jquery.easing.js',
+        'node_modules/fullpage.js/dist/jquery.fullpage.js',
         'inc/js/site.js',
-
         // Coffeescript
         'inc/js/coffee/*.*',
     ])
