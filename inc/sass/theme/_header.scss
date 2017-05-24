@@ -23,3 +23,42 @@
 .admin-bar .site-header{
     top: 32px;
 }
+
+
+.sembia-brand {
+    text-align: center;
+    margin: 15px auto 0;
+    display: block;
+    .sembia-title {
+        margin-top: -20px;
+        font-size: 13px;
+        span {
+            padding: 0 30px;
+
+        }
+    }
+}
+
+.primary-navbar {
+    .navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    ul {
+        list-style-type: none;
+        margin-top: 10px;
+        & > li {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+
+            &:after {
+                content: '/';
+                padding: 2px 12px;
+            }
+            &:last-child:after {
+                display: none;
+            }
+        }
+    }
+}

@@ -34,29 +34,31 @@ if(!empty($site_logo)){
 
 	<header id="header-nav" class="navbar navbar-fixed-top site-header sembia-header">
         <div class="container">
-            <?php if ($site_logo) { ?>
-            <div class="navbar-header">
+
+            <div class="primary-navbar">
+                <?php if ($site_logo) { ?>
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) );?>">
                     <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo $site_logo; ?>">
                 </a>
+                <?php } else { ?>
+                    <a class="sembia-brand" href="https://sembia.studio">
+                        <?php get_template_part('inc/svg/logo.svg'); ?>
+                        <h1 class="sembia-title"><span>Sembia</span><span>Studio</span></h1>
+                    </a>
+                <?php } ?>
+                <div class="navbar">
+                    <?php
+                    wp_nav_menu( array(
+                        'menu'              => 'primary',
+                        'theme_location'    => 'primary',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'navbar-collapse-primary',
+                        'menu_class'        => 'nav navbar-nav'
+                    )); ?>
+                </div>
             </div>
-            <?php } ?>
-            <div class="navbar-right">
-                <?php
-                wp_nav_menu( array(
-                    'menu'              => 'primary',
-                    'theme_location'    => 'primary',
-                    'depth'             => 2,
-                    'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
-                    'container_id'      => 'bs-example-navbar-collapse-1',
-                    'menu_class'        => 'nav navbar-nav',
-                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                    'walker'            => new wp_bootstrap_navwalker())
-                );
-                ?>
-            </div>
-
         </div>
 	</header><!-- #masthead -->
 
