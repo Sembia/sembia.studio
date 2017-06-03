@@ -30,6 +30,8 @@
             navigationTooltips: titles,
             bigSectionsDestination: 'top',
             responsiveWidth: 992,
+            scrollBar: true,
+            fixedElements: '#header-nav',
         });
 
         fullscreener($('.' + $classes.FsrImage));

@@ -1,5 +1,5 @@
 <?php
-// p.Lead
+// container
 vc_map(
     array(
         "name" => "Dark Container",
@@ -146,6 +146,7 @@ vc_map(array(
             "param_name" => "accent",
             "value" => array(
                 'Default (none)' => 'default',
+                'White' => 'white',
                 'Red' => 'red',
                 'Blue' => 'blue',
                 'Green' => 'green',
@@ -218,6 +219,79 @@ class WPBakeryShortCode_sembia_button extends WPBakeryShortCode {
         $output = false;
         ob_start();
         include(locate_template('inc/shortcodes/button.php'));
+        $output = ob_get_clean();
+        return $output;
+    }
+}
+// Callout Title
+vc_map(array(
+    "name" => "Hero Block",
+    "description" => "A large hero block with centered text",
+    "base" => "sembia_hero",
+    "category" => "Content",
+    "params" => array(
+        array(
+            "admin_label" => true,
+            "type" => "textfield",
+            "heading" => __("Title"),
+            "param_name" => "title",
+            "value" => '',
+        ),
+        array(
+            "admin_label" => true,
+            "type" => "textfield",
+            "heading" => __("Subtitle"),
+            "param_name" => "subtitle",
+            "value" => '',
+        ),
+        array(
+            "admin_label" => true,
+            "type" => "dropdown",
+            "heading" => __("Heading size"),
+            "param_name" => "header_size",
+            "value" => array(
+                'Default (h2)' => 'h2',
+                'h1' => 'h1',
+                'h3' => 'h3',
+            ),
+        ),
+        array(
+            "admin_label" => true,
+            "type" => "dropdown",
+            "heading" => __("Accent Color"),
+            "param_name" => "accent",
+            "value" => array(
+                'Default (none)' => 'default',
+                'White' => 'white',
+                'Red' => 'red',
+                'Blue' => 'blue',
+                'Green' => 'green',
+                'Yellow' => 'yellow',
+            ),
+        ),
+        array(
+            "admin_label" => true,
+            "type" => "attach_image",
+            "heading" => __("Background Image"),
+            "param_name" => "image",
+            "value" => '',
+        ),
+    )
+));
+class WPBakeryShortCode_sembia_hero extends WPBakeryShortCode {
+    protected function content($atts, $content = null) {
+        extract(shortcode_atts(
+            array(
+                "image" => '', // Post IDs or URL to a full-sized image
+                "subtitle" => '',
+                "title" => '',
+                "header_size" => 'h2',
+                "accent" => 'default',
+            ), $atts
+        ));
+        if ($image) { $image = wp_get_attachment_image_src($image, 'full'); }
+        ob_start();
+        include(locate_template('inc/shortcodes/hero.php'));
         $output = ob_get_clean();
         return $output;
     }

@@ -5,6 +5,9 @@
         text-transform: uppercase;
         font-family: $font-family-sans-serif;
     }
+    &.accent-white {
+        .block-heading {color: $white;}
+    }
     &.accent-red {
         .block-heading {color: $red;}
     }
@@ -17,4 +20,5 @@
     &.accent-yellow {
         .block-heading {color: $yellow;}
     }
+
 }

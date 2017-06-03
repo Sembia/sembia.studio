@@ -56,11 +56,12 @@
 .single-post {
     @include color_switch(#fff);
 }
-
+.page-white {
+    @include color_switch($white);
+}
 .page-red {
     @include color_switch($red);
 }
-
 .page-blue {
     @include color_switch($blue);
 }
@@ -74,6 +75,9 @@
 }
 
 .menu-item {
+    &.page-white {
+        @include link_switch($white);
+    }
     &.page-red {
         @include link_switch($red);
     }

@@ -3,6 +3,7 @@ $red: #F65314;
 $blue: #00A1F1;
 $green: #7CBB00;
 $yellow: #FFBB00;
+$white: #fff;
 
 @import "bootstrap/bootstrap";
 @import "font-awesome/font-awesome";
@@ -10,6 +11,7 @@ $yellow: #FFBB00;
 
 @import "theme/vc/callout_title";
 @import "theme/vc/image_grid";
+@import "theme/vc/hero";
 
 // Import Theme CSS
 @import "theme/layout";

@@ -1,0 +1,23 @@
+.block-hero {
+    display: table;
+    padding: 40px;
+    background-color: rgba(26,26,26,0.75);
+    width: 100%;
+    height: 400px;
+
+    .image-primary {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .block-title {
+        font-size: 5rem;
+    }
+
+    .block-subtitle {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        width: 60%;
+        margin: 20px auto 0;
+    }
+}

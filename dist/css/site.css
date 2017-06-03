@@ -8434,6 +8434,8 @@ html.fp-enabled,
   .block-title-container .block-subtitle {
     text-transform: uppercase;
     font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .block-title-container.accent-white .block-heading {
+    color: #fff; }
   .block-title-container.accent-red .block-heading {
     color: #F65314; }
   .block-title-container.accent-blue .block-heading {
@@ -8529,6 +8531,23 @@ html.fp-enabled,
     .sembia-image-wwd .image-primary {
       height: auto !important; } }
 
+.block-hero {
+  display: table;
+  padding: 40px;
+  background-color: rgba(26, 26, 26, 0.75);
+  width: 100%;
+  height: 400px; }
+  .block-hero .image-primary {
+    display: table-cell;
+    vertical-align: middle; }
+  .block-hero .block-title {
+    font-size: 5rem; }
+  .block-hero .block-subtitle {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    width: 60%;
+    margin: 20px auto 0; }
+
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   letter-spacing: 1.5px; }
@@ -8538,15 +8557,14 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased; }
 
 .dark-container {
-  background-color: rgba(0, 0, 0, 0.75);
-  padding: 20px 40px;
-  -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.8);
-  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.8); }
+  background-color: rgba(26, 26, 26, 0.75);
+  padding: 20px 40px; }
 
 .section {
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  padding-top: 20px; }
   .section:before {
     position: absolute;
     top: 0;
@@ -8556,7 +8574,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     content: ' ';
-    background: rgba(0, 0, 0, 0.75); }
+    background: rgba(26, 26, 26, 0.7); }
 
 .button-wrapper {
   margin-bottom: 10px; }
@@ -8671,6 +8689,39 @@ h1, h2, h3, h4, h5, h6 {
 .single-post .form-control:focus,
 .single-post .wpcf7-form-control:focus,
 .single-post .wpcf7-form-control:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fff;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fff; }
+
+.page-white h1, .page-white h2, .page-white h3, .page-white h4, .page-white h5, .page-white h6 {
+  color: #fff; }
+
+.page-white .entry-content a {
+  color: #fff;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  cursor: pointer; }
+  .page-white .entry-content a:hover {
+    color: white; }
+
+.page-white .entry-content blockquote {
+  border: 1px solid #fff; }
+
+.page-white a.btn-primary {
+  color: #fff;
+  border-color: #fff;
+  background-color: #fff;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all; }
+  .page-white a.btn-primary:hover {
+    color: #fff;
+    background-color: #cccccc;
+    border-color: #cccccc; }
+
+.page-white .sembia-image-caption {
+  background-color: #fff; }
+
+.page-white .form-control:focus, .page-white .wpcf7-form-control:focus,
+.page-white .wpcf7-form-control:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fff;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #fff; }
 
@@ -8806,6 +8857,17 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7CBB00;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #7CBB00; }
 
+.menu-item.page-white a {
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+  cursor: pointer; }
+  .menu-item.page-white a:hover, .menu-item.page-white a:focus {
+    color: #fff;
+    background-color: transparent; }
+
+.menu-item.page-white.current_page_item a {
+  border-bottom: 1px solid #fff !important; }
+
 .menu-item.page-red a {
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
@@ -8860,6 +8922,13 @@ h1, h2, h3, h4, h5, h6 {
     .site-header .navbar-brand > img {
       height: 50px;
       padding: 15px; }
+  .site-header .navbar {
+    margin: 0 auto; }
+  .site-header .navbar-nav > li {
+    float: none; }
+    .site-header .navbar-nav > li > a {
+      display: inline-block;
+      padding: 0; }
   .site-header .nav > li > a:focus,
   .site-header .nav > li > a:hover {
     background-color: transparent; }
@@ -8871,7 +8940,11 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin: 15px auto 0;
   display: block; }
+  .sembia-brand svg {
+    width: auto;
+    height: 32px; }
   .sembia-brand .sembia-title {
+    display: none;
     margin-top: -20px;
     font-size: 13px; }
     .sembia-brand .sembia-title span {
@@ -8883,11 +8956,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .primary-navbar ul {
   list-style-type: none;
-  margin-top: 10px; }
+  font-family: "ff-good-headline-web-pro-con", "proxima-nova", "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .primary-navbar ul > li {
     display: inline-block;
     text-transform: uppercase;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    font-size: 13px; }
     .primary-navbar ul > li:after {
       content: '/';
       padding: 2px 12px; }
@@ -9065,7 +9139,10 @@ a {
   position: fixed;
   bottom: 10px;
   right: 10px;
-  color: rgba(255, 255, 255, 0.3); }
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 10px; }
   .site-footer a {
     color: rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid; }
@@ -9074,6 +9151,9 @@ a {
   width: 100%;
   text-transform: uppercase;
   letter-spacing: 4px; }
+
+.wpcf7-form br {
+  display: none; }
 
 .wpcf7-form-control {
   letter-spacing: 1.5px;
