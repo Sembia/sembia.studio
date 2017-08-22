@@ -43,7 +43,15 @@ function add_color_nav_class($classes, $item){
     if( 'page' == $item->object ){
         $colorcode = get_post_meta($item->object_id, 'color', true);
         $classes[] = $colorcode;
+		$classes[] = 'nav-item';
     }
     return $classes;
 }
 add_filter('nav_menu_css_class' , 'add_color_nav_class' , 10 , 2);
+
+function my_walker_nav_menu_start_el($item_output, $item, $depth, $args) {
+    // you can put your if statements in here (use item, depth and args in conditions)
+    $item_output = preg_replace('/<a /', '<a class="nav-link" ', $item_output, 1);
+    return $item_output;
+}
+add_filter('walker_nav_menu_start_el', 'my_walker_nav_menu_start_el', 10, 4);

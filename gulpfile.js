@@ -51,15 +51,9 @@ gulp.task('imagemin', function() {
 
 // Copy components
 gulp.task('copy-components', function() {
-    gulp.src([
-        'node_modules/jquery/dist/jquery.min.js',
-    ])
-    .pipe(gulp.dest('dist/js/lib'));
-
     gulp.src('node_modules/components-font-awesome/scss/**/*.*')
     .pipe(gulp.dest('inc/sass/font-awesome'));
-
-    gulp.src('node_modules/bootstrap-sass/assets/stylesheets/**/*.*')
+    gulp.src('node_modules/bootstrap/scss/**/*.*')
     .pipe(gulp.dest('inc/sass/bootstrap'));
 });
 
@@ -94,10 +88,13 @@ gulp.task('build-css', function() {
 // Concat All JS into unminified single file
 gulp.task('concat-js', function() {
     return gulp.src([
-        'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
+        //'node_modules/jquery/dist/jquery.min.js',
+        'node_modules/popper.js/dist/umd/popper.min.js',
+        'node_modules/bootstrap/dist/js/bootstrap.min.js',
         'node_modules/jquery.easing/js/jquery.easing.js',
         'node_modules/fullpage.js/dist/jquery.fullpage.js',
-        'inc/js/site.js',
+        //'inc/js/navigation.js',
+        'inc/js/functions.js',
         // Coffeescript
         'inc/js/coffee/*.*',
     ])

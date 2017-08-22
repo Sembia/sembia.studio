@@ -1,17 +1,25 @@
-// Colors
+// variables
 $red: #F65314;
 $blue: #00A1F1;
 $green: #7CBB00;
 $yellow: #FFBB00;
 $white: #fff;
+$text-color: #eef2f5;
 
+// Override Bootstrap settings
+@import "override";
+
+// Import Libraries
 @import "bootstrap/bootstrap";
 @import "font-awesome/font-awesome";
 @import "fullpage/fullpage";
 
+// Visual Composer Components
 @import "theme/vc/callout_title";
 @import "theme/vc/image_grid";
 @import "theme/vc/hero";
+@import "theme/vc/headline";
+@import "theme/vc/shapes";
 
 // Import Theme CSS
 @import "theme/layout";

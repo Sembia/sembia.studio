@@ -1,0 +1,57 @@
+.shape {
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.random-shape:after {
+    font-family: FontAwesome;
+    content: "\f005";
+    position: relative;
+    z-index: 1;
+}
+
+$circle-size: 100px;
+$colors: $red, $blue, $yellow, $green, $orange;
+$shapes: '\f067', '\f0c8', '\f1db', '\f096', '\f1cb';
+$shape-count: 50;
+
+@for $i from 1 through $shape-count {
+    $shape-size: random(10);
+    $rotation: random(360);
+    $speed: 650 + random(10);
+    $color-key: random( length($colors) );
+    $shape-color: nth( $colors, $color-key );
+    $shape-key: random( length($shapes) );
+    $shape-type: nth( $shapes, $shape-key );
+    $text: random(10);
+
+    @keyframes shape-#{$i} {
+        0% {
+            transform: translate3d(0,0,0) rotate(#{$rotation + 0}deg);
+        }
+        100% {
+            transform: translate3d(0,0,0) rotate(#{$rotation + 360}deg);
+        }
+    }
+
+    .shape-container--#{$i} {
+        animation: shape-#{$i} #{$speed}s linear infinite;
+
+        .random-shape:after {
+            margin: #{$shape-size}rem;
+            color: $shape-color;
+            font-size: #{$shape-size * 0.2}rem;
+            content: $shape-type;
+        }
+    }
+}
+
+.stop-shape  {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}

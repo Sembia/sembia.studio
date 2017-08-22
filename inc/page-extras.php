@@ -20,6 +20,14 @@ function render_page_type_box($object, $box){
         'page-yellow' => 'Yellow',
         'page-green' => 'Green',
     );
+
+    $background_options = array(
+        'image-default' => 'Default',
+        'image-fixed' => 'Fixed',
+    );
+    $curr_background_settings = get_post_meta($object->ID, 'image-background', true);
+    if(empty($curr_background_settings)) { $curr_background_settings = 'image-default'; }
+
     $curr_color = get_post_meta($object->ID, 'color', true);
     if(empty($curr_color)) { $curr_color = 'page-default'; }
 
@@ -71,6 +79,17 @@ function render_page_type_box($object, $box){
             <?php } ?>
         </select>
     </p>
+
+    <p>
+        <strong>Background Image Settings</strong>
+        <br/>
+        <select name="image-background-settings">
+            <?php foreach($background_options as $key => $val){ ?>
+                <option value="<?php echo $key; ?>" <?php if($key == $curr_background_settings){ echo "selected"; }?>><?php echo $val; ?></option>
+            <?php } ?>
+        </select>
+    </p>
+
 <?php
 }
 /* Save the meta box's post metadata. */
@@ -85,6 +104,9 @@ function save_page_meta( $post_id, $post ) {
         return $post_id;
     $color_meta = get_post_val('page-color');
     update_post_meta($post_id, 'color', $color_meta);
+
+    $image_background_meta = get_post_val('image-background-settings');
+    update_post_meta($post_id, 'image-background', $image_background_meta);
 
     $fullpage_parent = get_post_val('fullpage-parent', 0);
     update_post_meta($post_id, 'fullpage-parent', $fullpage_parent);

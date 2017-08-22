@@ -107,70 +107,6 @@ class WPBakeryShortCode_sembia_blockquote extends WPBakeryShortCode {
         return $output;
     }
 }
-// Callout Title
-vc_map(array(
-    "name" => "Title & Subtitle",
-    "description" => "A Subtitle and Title block",
-    "base" => "sembia_callout_title",
-    "category" => "Content",
-    "params" => array(
-        array(
-            "admin_label" => true,
-            "type" => "textfield",
-            "heading" => __("Title"),
-            "param_name" => "title",
-            "value" => '',
-        ),
-        array(
-            "admin_label" => true,
-            "type" => "textfield",
-            "heading" => __("Subtitle"),
-            "param_name" => "subtitle",
-            "value" => '',
-        ),
-        array(
-            "admin_label" => true,
-            "type" => "dropdown",
-            "heading" => __("Heading size"),
-            "param_name" => "header_size",
-            "value" => array(
-                'Default (h2)' => 'h2',
-                'h1' => 'h1',
-                'h3' => 'h3',
-            ),
-        ),
-        array(
-            "admin_label" => true,
-            "type" => "dropdown",
-            "heading" => __("Accent Color"),
-            "param_name" => "accent",
-            "value" => array(
-                'Default (none)' => 'default',
-                'White' => 'white',
-                'Red' => 'red',
-                'Blue' => 'blue',
-                'Green' => 'green',
-                'Yellow' => 'yellow',
-            ),
-        ),
-    )
-));
-class WPBakeryShortCode_sembia_callout_title extends WPBakeryShortCode {
-    protected function content($atts, $content = null) {
-        extract(shortcode_atts(
-            array(
-                "subtitle" => '',
-                "title" => '',
-                "header_size" => 'h2',
-                "accent" => 'default',
-            ), $atts
-        ));
-        ob_start();
-        include(locate_template('inc/shortcodes/callout_title.php'));
-        $output = ob_get_clean();
-        return $output;
-    }
-}
 
 // Button
 vc_map(
@@ -292,6 +228,45 @@ class WPBakeryShortCode_sembia_hero extends WPBakeryShortCode {
         if ($image) { $image = wp_get_attachment_image_src($image, 'full'); }
         ob_start();
         include(locate_template('inc/shortcodes/hero.php'));
+        $output = ob_get_clean();
+        return $output;
+    }
+}
+
+
+// Random Shapes
+vc_map(array(
+    "name" => "Shapes",
+    "description" => "Displays a randam array of shapes",
+    "base" => "sembia_shapes",
+    "category" => "Content",
+    "params" => array(
+        array(
+            "admin_label" => true,
+            "type" => "textfield",
+            "heading" => __("Height"),
+            "param_name" => "height",
+            "value" => '',
+        ),
+        array(
+            "admin_label" => true,
+            "type" => "textfield",
+            "heading" => __("width"),
+            "param_name" => "width",
+            "value" => '',
+        ),
+    )
+));
+class WPBakeryShortCode_sembia_shapes extends WPBakeryShortCode {
+    protected function content($atts, $content = null) {
+        extract(shortcode_atts(
+            array(
+                "height" => '', // Post IDs or URL to a full-sized image
+                "width" => '',
+            ), $atts
+        ));
+        ob_start();
+        include(locate_template('inc/shortcodes/shapes.php'));
         $output = ob_get_clean();
         return $output;
     }

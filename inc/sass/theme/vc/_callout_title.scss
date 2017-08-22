@@ -1,4 +1,6 @@
 .block-title-container {
+    position: relative;
+    z-index: 10;
     margin-bottom: 20px;
     .block-title { margin-top: 0; }
     .block-subtitle {

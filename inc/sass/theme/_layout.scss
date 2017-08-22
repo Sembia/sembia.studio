@@ -6,6 +6,8 @@ h1, h2, h3, h4, h5, h6 {
 .container,
 .container-fluid {
     -webkit-font-smoothing: antialiased; // Fix for font thickness for chrome/safari
+    position: relative;
+    z-index: 5;
 }
 
 .dark-container {
@@ -20,6 +22,8 @@ h1, h2, h3, h4, h5, h6 {
     background-position: center;
     background-repeat: no-repeat;
     padding-top: 20px;
+    z-index: 5;
+    overflow: hidden;
 
     &:before {
         position: absolute;
@@ -28,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 100%;
         height: 100%;
         content: ' ';
-        background: rgba(26, 26, 26, .7);
+        //background: rgba(26, 26, 26, .7);
     }
 }
 
