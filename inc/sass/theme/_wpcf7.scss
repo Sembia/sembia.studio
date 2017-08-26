@@ -12,8 +12,10 @@
     @extend .form-control;
     letter-spacing: 1.5px;
     border-color: rgba(255, 255, 255, .5);
-    background-color: rgba(0, 0, 0, .5);
+    background-color: transparent;
     margin-top: 5px;
+    color: $text-color;
+    &:focus { background-color: transparent; }
 }
 
 .wpcf7-submit {
@@ -23,5 +25,6 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
+    color: $text-color;
     border-color: $text-color;
 }
