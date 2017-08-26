@@ -1,26 +1,49 @@
 <?php
-// container
+// dark container
 vc_map(
     array(
-        "name" => "Dark Container",
-        "description" => "Container to wrap contents in darker area.",
-        "base" => "sembia_dark_container",
+        "name" => "Container",
+        "description" => "Container to wrap content.",
+        "base" => "sembia_container",
         "category" => "Content",
         "show_settings_on_create" => false,
         "is_container" => true,
         "content_element" => true,
         "js_view" => 'VcColumnView',
+        "params" => array(
+            array(
+                "admin_label" => true,
+                "type" => "dropdown",
+                "heading" => __("Background Color"),
+                "param_name" => "color",
+                "value" => array(
+                    'None (Default)' => 'transparent',
+                    'Dark' => 'dark',
+                    'light' => 'light',
+                ),
+            ),
+            array(
+                "admin_label" => true,
+                "type" => "attach_image",
+                "heading" => __("Background Image"),
+                "param_name" => "image",
+                "value" => '',
+            ),
+        ),
     )
 );
-class WPBakeryShortCode_sembia_dark_container extends WPBakeryShortCodesContainer {
+class WPBakeryShortCode_sembia_container extends WPBakeryShortCodesContainer {
     protected function content($atts, $content = null) {
         extract(shortcode_atts(
             array(
+                'color' => 'transparent',
+                'image' => '',
             ), $atts
         ));
         $output = false;
+        if ($image) { $image = wp_get_attachment_image_src($image, 'full');}
         ob_start();
-        include(locate_template('inc/shortcodes/dark_container.php'));
+        include(locate_template('inc/shortcodes/container.php'));
         $output = ob_get_clean();
         return $output;
     }
