@@ -45,6 +45,14 @@
             scrollBar: false,
             fixedElements: '#header-nav',
         });
+        $('#fullpageSingle').fullpage({
+            anchors: anchors,
+            navigation: false,
+            bigSectionsDestination: 'top',
+            responsiveWidth: 992,
+            scrollBar: false,
+            fixedElements: '#header-nav',
+        });
 
         var html = '';
         for (var i = 1; i <= 50; i ++) {

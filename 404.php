@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="fullpage">
+<div id="fullpageSingle">
 
 	<div id="primary" data-title="Error" class="section content-area">
 		<main id="main" class="site-main" role="main">
