@@ -31,7 +31,7 @@ if(!empty($site_logo)){
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<header id="header-nav" class="site-header navbar navbar-expand-sm navbar-fixed-top sembia-header">
+	<header id="header-nav" class="site-header navbar navbar-expand-sm sembia-header">
         <div class="container">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -1,0 +1,12 @@
+.search-form {
+    .search-field {
+        margin-right: 10px;
+    }
+    .search-submit {
+        color: $white;
+        background-color: transparent;
+        border: 1px solid $white;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+}

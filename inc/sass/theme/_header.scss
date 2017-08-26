@@ -1,6 +1,6 @@
 @media (min-width: 576px) {
     .site-header {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         right: 0;
@@ -25,6 +25,11 @@
                 opacity: .1;
                 z-index: 1;
             }
+        }
+    }
+    .fp-enabled {
+        .site-header {
+            position: fixed;
         }
     }
     // .admin-bar .site-header{ top: 32px; }

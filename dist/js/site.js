@@ -3181,7 +3181,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             bigSectionsDestination: 'top',
             responsiveWidth: 992,
             scrollBar: false,
-            fixedElements: '#header-nav',
+            //fixedElements: '#header-nav',
         });
         $('#fullpageSingle').fullpage({
             anchors: anchors,
@@ -3189,7 +3189,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
             bigSectionsDestination: 'top',
             responsiveWidth: 992,
             scrollBar: false,
-            fixedElements: '#header-nav',
+            //fixedElements: '#header-nav',
         });
 
         var html = '';
@@ -3262,7 +3262,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
     $win.bind('scroll',function(e){
         // Only do parallax on larger screens
         if($win.width() > 991){
-            pageParallaxScroll();
+            //pageParallaxScroll();
         }
     });
 

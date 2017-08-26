@@ -43,7 +43,7 @@
             bigSectionsDestination: 'top',
             responsiveWidth: 992,
             scrollBar: false,
-            fixedElements: '#header-nav',
+            //fixedElements: '#header-nav',
         });
         $('#fullpageSingle').fullpage({
             anchors: anchors,
@@ -51,7 +51,7 @@
             bigSectionsDestination: 'top',
             responsiveWidth: 992,
             scrollBar: false,
-            fixedElements: '#header-nav',
+            //fixedElements: '#header-nav',
         });
 
         var html = '';
@@ -124,7 +124,7 @@
     $win.bind('scroll',function(e){
         // Only do parallax on larger screens
         if($win.width() > 991){
-            pageParallaxScroll();
+            //pageParallaxScroll();
         }
     });
 
