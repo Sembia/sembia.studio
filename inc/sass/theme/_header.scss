@@ -30,6 +30,7 @@
     .fp-enabled {
         .site-header {
             position: fixed;
+            z-index: 100;
         }
     }
     // .admin-bar .site-header{ top: 32px; }

@@ -25,6 +25,10 @@ $sections = new WP_Query(array(
         )
     )
 ));
+
+$fullpage_settings = get_post_meta($post->ID, 'fullpage', true);
+if(empty($fullpage_settings)) { $fullpage_settings = 'fullpage'; }
+
 $container_size = get_post_meta($post->ID, 'fullwidth', true);
 if(empty($container_size)) { $container_size = 'container'; }
 
@@ -37,7 +41,7 @@ if(empty($image_background_meta)) { $image_background_meta = 'image-default'; }
 $background_image = get_the_post_thumbnail_url($post->ID, 'full');
 ?>
 
-<div id="fullpage" <?php post_class(); ?>>
+<div id="<?php echo $fullpage_settings; ?>" <?php post_class(); ?>>
 
     <div class="section <?php echo $image_background_meta; ?>" data-title="<?php echo get_the_title(); ?>" <?php if($background_image){ ?> style="background-image:url('<?php echo $background_image;?>')" <?php } ?> >
         <div class="<?php echo $container_size; ?> <?php echo $section_color; ?>">
@@ -73,7 +77,7 @@ $background_image = get_the_post_thumbnail_url($post->ID, 'full');
                     esc_html__( 'Edit %s', 'sembia' ),
                     the_title( '<span class="screen-reader-text">"', '"</span>', false )
                 ),
-                '<span class="edit-link">',
+                '<span class="edit-link edit-link-fixed">',
                 '</span>'
             );
             ?>

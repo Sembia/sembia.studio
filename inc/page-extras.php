@@ -25,8 +25,18 @@ function render_page_type_box($object, $box){
         'image-default' => 'Default',
         'image-fixed' => 'Fixed',
     );
+
+    $fullpage_options = array(
+        'fullpage' => 'Default (Fullpage)',
+        'fullpageSingle' => 'Single Fullpage',
+        'fullpageNone' => 'Disabled',
+    );
+
     $curr_background_settings = get_post_meta($object->ID, 'image-background', true);
     if(empty($curr_background_settings)) { $curr_background_settings = 'image-default'; }
+
+    $curr_fullpage = get_post_meta($object->ID, 'fullpage', true);
+    if(empty($curr_fullpage)) { $curr_fullpage = 'fullpage'; }
 
     $curr_color = get_post_meta($object->ID, 'color', true);
     if(empty($curr_color)) { $curr_color = 'page-default'; }
@@ -90,6 +100,16 @@ function render_page_type_box($object, $box){
         </select>
     </p>
 
+    <p>
+        <strong>Fullpage.js Settings</strong>
+        <br/>
+        <select name="fullpage">
+            <?php foreach($fullpage_options as $key => $val){ ?>
+                <option value="<?php echo $key; ?>" <?php if($key == $curr_fullpage){ echo "selected"; }?>><?php echo $val; ?></option>
+            <?php } ?>
+        </select>
+    </p>
+
 <?php
 }
 /* Save the meta box's post metadata. */
@@ -116,4 +136,7 @@ function save_page_meta( $post_id, $post ) {
 
     $fullwidth = get_post_val('fullwidth');
     update_post_meta($post_id, 'fullwidth', $fullwidth);
+
+    $fullpage = get_post_val('fullpage');
+    update_post_meta($post_id, 'fullpage', $fullpage);
 }
