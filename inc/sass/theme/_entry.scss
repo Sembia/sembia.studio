@@ -1,11 +1,8 @@
-.dark-container {
+.hentry {
     .entry-header {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
         .entry-title {
             letter-spacing: 2px;
-            font-size: 26px;
-            line-height: 36px;
-            text-transform: uppercase;
             width: 75%;
         }
     }
@@ -14,6 +11,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 100;
+        display: block;
 
         .posted-on {
             .entry-date.published + .updated { display: none; }
@@ -62,18 +60,7 @@
         }
     }
 
-    .entry-footer {
-        .edit-link {
-            display: block;
-            margin: 15px 0;
-            a {
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                border: 1px solid;
-                padding: 3px 8px;
-            }
-        }
-    }
+    .entry-footer {}
 
     & + & {
         margin-top: 60px;
