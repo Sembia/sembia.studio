@@ -25,10 +25,9 @@
         blockquote {
             margin: 40px 0;
             position: relative;
-            left: -90px;
-            background: #000;
+            background: lighten($body-bg, 3%);
             padding: 30px;
-            border: 1px solid;
+            border: 1px solid rgba($text-color, .25);
             line-height: 28px;
             font-weight: 100;
         }

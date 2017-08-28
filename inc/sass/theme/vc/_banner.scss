@@ -1,0 +1,12 @@
+.banner-block {
+    display: table;
+    width: 100%;
+    margin-bottom: 30px;
+
+    .banner-block-inner {
+        display: table-cell;
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}

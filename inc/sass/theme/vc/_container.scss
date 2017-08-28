@@ -3,6 +3,8 @@ $margin-offset: 30px;
 
 .block-container {
     position: relative;
+    margin-bottom: ($margin-offset * 2);
+
     .image-primary {
         display: block;
         position: absolute;
